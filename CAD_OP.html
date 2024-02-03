@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #salvar-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #cancelar-btn {
+            background-color: #e74c3c;
+            color: white;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #content {
+            flex-grow: 1;
+            margin-left: 33%;
+            padding: 20px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>    
+    <div id="content">
+        <!-- Conteúdo da página vai aqui -->
+        <h1>Cadastro de Funcionarios</h1>
+        
+    </div>
+
+<form id="equipamento-form">
+    
+       
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="Nome" required>
+
+    <label for="funcao">Função:</label>
+    <input type="text" id="funcao" name="funcao" required>
+
+
+
+    <button id="salvar-btn" type="button" onclick="salvarEquipamento()">Salvar</button>
+    <button id="cancelar-btn" type="button" onclick="cancelarCadastro()">Cancelar</button>
+</form>
+
+<script>
+    function salvarEquipamento() {
+        var nome = document.getElementById('nome').value;
+        var funcao = document.getElementById('funcao').value;
+
+        // Adicione a lógica para salvar os dados, por exemplo, enviar para um servidor.
+        // Aqui, apenas exibimos os dados no console para fins de demonstração.
+        console.log("nome:", prefixo);
+        console.log("Funçao:", funcao);
+
+    }
+
+    function cancelarCadastro() {
+       // Limpa todos os campos do formulário
+       document.getElementById('nome').value = '';
+        document.getElementById('funcao').value = '';
+
+        // Redireciona para uma página específica (substitua "pagina-especifica.html" pelo seu URL)
+        window.location.href = 'index.html';
+    }
+</script>
+
+</body>
+</html>

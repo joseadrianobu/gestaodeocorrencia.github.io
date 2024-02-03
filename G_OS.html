@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+    
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    
+        input[type="text"], input[type="tel"] {
+            width: calc(80% - 12px); /* Reduzido em 60% */
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type="date"]{
+            width: calc(30% - 12px); /* Reduzido em 60% */
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type="time"] {
+            width: calc(30% - 12px); /* Reduzido em 60% */
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    
+        select[Id="departamento"]{
+            width: calc(15% - 12px); /* Reduzido em 60% */
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            position: absolute;
+            left: 780px;
+            top: 312px;
+    
+        }
+        label[for="departamento"]{
+            width: calc(15% - 12px); /* Reduzido em 60% */
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            position: absolute;
+            left: 772px;
+            top: 271px;
+    
+        } 
+        
+    
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        textarea {
+            width: calc(103% - 12px);
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            height: 150px; /* Altura aumentada */
+        }
+    
+        button {
+            margin-top: 10px;
+            padding: 20px 45px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    
+        #button-lancar {
+            background-color: #4caf50;
+            color: white;
+        }
+    
+        #cancelar-btn {
+            background-color: #e74c3c;
+            color: white;
+            margin-left: 10px;
+        }
+    
+        button:hover {
+            opacity: 0.8;
+        }
+    
+        /* Adicionado estilo para alinhar os botões ao centro */
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 20%;
+            padding: 20px;
+            white-space: nowrap;
+        }
+    
+        #content h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="https://api.sheetmonkey.io/form/wUKJxCTaoy9vBtWg4szPMt" method="post">
+        <div id="content">
+          
+            <h1>Gerar Ocorrência</h1>            
+        </div>        
+        
+        <div class="input-container">
+            <div>
+                <label for="numero_os">Nº OS:</label>
+                <input type="text" id="numero_os" name="Nº OS" required>
+            </div>
+            <div>
+                <label for="prefixo">Prefixo:</label>
+                <input type="text" id="prefixo" name="PREFIXO" required>
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="TELEFONE" required>
+            </div>
+
+        </div>
+        
+            <div>
+                <label for="operador">Operador:</label>
+                <input type="text" id="operador" name="OPERADOR" required>
+            </div>            
+
+            </div>
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="DATA">
+            </div>
+            </div>
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="HORA">
+            </div>
+         
+        
+
+    
+        <label for="grupoquebra">Grupo da Quebra:</label>
+        <select id="grupoquebra" name="GRUPO DA QUEBRA" required>
+            <option value="eletrico">Elétrico</option>
+            <option value="mecanico">Mecânico</option>
+            <option value="outros">Outros</option>
+        </select>
+    
+        <label for="local">Local:</label>
+        <select id="local" name="LOCAL" required>
+            <option value="Patio Tecpav">Setor A</option>
+            <option value="Seinfra">Setor B</option>
+            <option value="T-63">Setor C</option>
+        </select>
+    
+        <label for="descricao">Descrição da Ocorrência:</label>
+        <textarea id="descricao" name="DESCRICAO" rows="4" required></textarea>
+
+        <label for="departamento">Departamento:</label>
+        <select id="departamento" name="DEPARTAMENTO" required>
+            <option value="CMVE">CMVE</option>
+            <option value="COMPRAS">COMPRAS</option>
+            <option value="EXTERNO">EXTERNO</option>
+            <option value="OPERACIONAL">OPERACIONAL</option>
+        </select>  
+
+    <div class="button-container">
+        <button id="button-lancar"type="submit">Lancar</button>    
+        <button id="cancelar-btn" type="button" onclick="cancelarCadastro()">Cancelar</button>  
+    </div>
+    <input type="hidden"name="x-sheetmonkey-redirect"value="https://joseadrianobu.github.io/gestaodeocorrencia.github.io/">   
+  </form>
+
+  <script>
+function cancelarCadastro() {
+       // Limpa todos os campos do formulário
+       document.getElementById('numero_os').value = '';
+        document.getElementById('prefixo').value = '';
+        document.getElementById('telefone').value = '';
+        document.getElementById('operador').value = '';
+        document.getElementById('data').value = '';
+        document.getElementById('hora').value = '';
+        document.getElementById('grupoquebra').value = '';
+        document.getElementById('local').value = '';
+        document.getElementById('descricao').value = '';
+        document.getElementById('departamento').value = '';
+
+        // Redireciona para uma página específica (substitua "pagina-especifica.html" pelo seu URL)
+        window.location.href = 'index.html';
+}
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Equipamentos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #salvar-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #cancelar-btn {
+            background-color: #e74c3c;
+            color: white;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #content {
+            flex-grow: 1;
+            margin-left: 33%;
+            padding: 20px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>    
+    <div id="content">
+        <!-- Conteúdo da página vai aqui -->
+        <h1>Cadastro de Equipamentos</h1>
+        
+    </div>
+
+<form id="equipamento-form">
+    
+       
+    <label for="prefixo">Prefixo:</label>
+    <input type="text" id="prefixo" name="prefixo" required>
+
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" name="marca" required>
+
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" name="modelo" required>
+
+    <label for="ano">Ano:</label>
+    <input type="number" id="ano" name="ano" required>
+
+    <label for="orgao">Órgão:</label>
+    <input type="text" id="orgao" name="orgao" required>
+
+    <button id="salvar-btn" type="button" onclick="salvarEquipamento()">Salvar</button>
+    <button id="cancelar-btn" type="button" onclick="cancelarCadastro()">Cancelar</button>
+</form>
+
+<script>
+    function salvarEquipamento() {
+        var prefixo = document.getElementById('prefixo').value;
+        var marca = document.getElementById('marca').value;
+        var modelo = document.getElementById('modelo').value;
+        var ano = document.getElementById('ano').value;
+        var orgao = document.getElementById('orgao').value;
+
+        // Adicione a lógica para salvar os dados, por exemplo, enviar para um servidor.
+        // Aqui, apenas exibimos os dados no console para fins de demonstração.
+        console.log("Prefixo:", prefixo);
+        console.log("Marca:", marca);
+        console.log("Modelo:", modelo);
+        console.log("Ano:", ano);
+        console.log("Órgão:", orgao);
+    }
+
+    function cancelarCadastro() {
+       // Limpa todos os campos do formulário
+       document.getElementById('prefixo').value = '';
+        document.getElementById('marca').value = '';
+        document.getElementById('modelo').value = '';
+        document.getElementById('ano').value = '';
+        document.getElementById('orgao').value = '';
+
+        // Redireciona para uma página específica (substitua "pagina-especifica.html" pelo seu URL)
+        window.location.href = 'index.html';
+    }
+</script>
+
+</body>
+</html>

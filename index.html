@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Gestao de Ocorrencias</title>
+</head>
+<body>
+    <aside class="sidebar">
+    <header class="sidebar-header">
+        <img class="logo-img" src="img_User.jpg" alt="Foto Usuario">
+    </header>
+
+    <nav>
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> Home</i>
+                <span>Home</span>
+            </span>
+        </button>
+
+        <button onclick="GerarOS()">
+            <span>
+                <i class="material-symbols-outlined"> Description</i>
+                <span>Gerar OS</span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> manufacturing</i>
+                <span>Encerrar OS</span>
+            </span>
+        </button>
+
+        <button onclick="CadOperador()">
+            <span>
+                <i class="material-symbols-outlined"> Person</i>
+                <span>Operador</span>
+            </span>
+        </button>
+
+        <button onclick="CadBairros()">
+            <span>
+                <i class="material-symbols-outlined"> map</i>
+                <span>Bairros</span>
+            </span>
+        </button>
+
+        <button onclick="CadEquipamento()">
+            <span>
+                <i class="material-symbols-outlined"> Front_Loader</i>
+                <span>Equipamentos</span>
+            </span>
+        </button>
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> Analytics</i>
+                <span>Status</span>
+            </span>
+        </button>
+    </nav>
+    </aside>
+    <main class="main">
+        <h1>Gestão de Ocorrencias</h1>
+    </main>
+
+    <script> 
+    function GerarOS() {
+    // Redireciona para uma página específica (substitua "pagina-especifica.html" pelo seu URL)
+                window.location.href = 'G_OS.html';
+        }
+
+        function CadOperador() {
+    // Redireciona para uma página específica (substitua "pagina-especifica.html" pelo seu URL)
+                window.location.href = 'CAD_OP.html';
+        }
+
+        function CadEquipamento() {
+    // Redireciona para uma página específica (substitua "pagina-especifica.html" pelo seu URL)
+                window.location.href = 'CAD_EQUIP.html';
+        }
+
+        function CadBairros() {
+    // Redireciona para uma página específica (substitua "pagina-especifica.html" pelo seu URL)
+                window.location.href = 'CAD_BAIRROS.html';
+        }
+
+    </script>
+
+</body>
+</html>
